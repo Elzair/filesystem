@@ -22,7 +22,7 @@ endif(NOT BOOST_SYSTEM_INCLUDE_DIRS OR NOT BOOST_SYSTEM_LIBRARIES)
 
 option(BOOST_SHARED_LIB "Enable dynamic linking" ON)
 
-set(BOOST_SYSTEM_INCLUDE_DIRS "${CMAKE_CURRENT_SOURCE_DIR}/include" CACHE STRING "Location of boost.system headers")
+set(BOOST_FILESYSTEM_INCLUDE_DIRS "${CMAKE_CURRENT_SOURCE_DIR}/include" CACHE STRING "Location of boost.filesystem headers")
 
 set(BOOST_INCLUDE_DIRS "${BOOST_INCLUDE_DIRS}" "${BOOST_FILESYSTEM_INCLUDE_DIRS}" CACHE STRING "All Boost headers" FORCE)
 
@@ -47,8 +47,6 @@ else()
   add_definitions(-DBOOST_FILESYSTEM_STATIC_LINK=1)
   add_library(boost_filesystem STATIC ${SOURCE_FILES})
 endif(BOOST_SHARED_LIB)
-set_property(TARGET boost_filesystem PROPERTY CXX_STANDARD 11)
-set_property(TARGET boost_filesystem PROPERTY CXX_STANDARD_REQUIRED ON)
 
 if("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang" OR "${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU")
   set(BOOST_FILESYSTEM_LIBRARIES "-L ${CMAKE_CURRENT_BINARY_DIR} -lboost_filesystem" CACHE STRING "Location of boost.filesystem library")
