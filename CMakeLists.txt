@@ -34,10 +34,12 @@ target_link_libraries(boost_filesystem
   boost::numeric::conversion
   boost::optional
   boost::predef boost::preprocessor
+  boost::range
   boost::smart_ptr boost::static_assert
   boost::throw_exception boost::tuple boost::type_index boost::type_traits boost::typeof
   boost::utility
-  boost::system boost::regex)
+  boost::system
+  boost::regex)
 
 install(TARGETS boost_filesystem DESTINATION lib)
 install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/include/boost DESTINATION include)
