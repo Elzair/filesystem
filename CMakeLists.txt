@@ -31,7 +31,7 @@ target_link_libraries(boost_filesystem
   boost::function boost::function_types boost::functional boost::fusion
   boost::integer boost::io boost::iterator
   boost::move boost::mpl
-  boost::numeric_conversion
+  boost::numeric::conversion
   boost::optional
   boost::predef boost::preprocessor
   boost::smart_ptr boost::static_assert
